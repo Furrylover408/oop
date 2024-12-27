@@ -1,4 +1,3 @@
-// Booking.java
 public class Booking {
     private Flight flight;
     private Passenger passenger;
@@ -10,7 +9,6 @@ public class Booking {
         this.bookingReference = bookingReference;
     }
 
-    // Getters and Setters
     public Flight getFlight() { return flight; }
     public void setFlight(Flight flight) { this.flight = flight; }
 
@@ -20,7 +18,6 @@ public class Booking {
     public String getBookingReference() { return bookingReference; }
     public void setBookingReference(String bookingReference) { this.bookingReference = bookingReference; }
 
-    @Override
     public String toString() {
         return "Booking{" +
                 "flight=" + flight +
