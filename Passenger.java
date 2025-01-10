@@ -1,4 +1,5 @@
-// Passenger.java
+import java.util.Objects;
+
 public class Passenger {
     private String name;
     private String passportNumber;
@@ -10,7 +11,6 @@ public class Passenger {
         this.nationality = nationality;
     }
 
-    // Getters and Setters
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
@@ -27,5 +27,18 @@ public class Passenger {
                 ", passportNumber='" + passportNumber + '\'' +
                 ", nationality='" + nationality + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Passenger passenger = (Passenger) o;
+        return Objects.equals(passportNumber, passenger.passportNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(passportNumber);
     }
 }
