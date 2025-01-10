@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Booking {
     private Flight flight;
     private Passenger passenger;
@@ -18,11 +20,25 @@ public class Booking {
     public String getBookingReference() { return bookingReference; }
     public void setBookingReference(String bookingReference) { this.bookingReference = bookingReference; }
 
+    @Override
     public String toString() {
         return "Booking{" +
                 "flight=" + flight +
                 ", passenger=" + passenger +
                 ", bookingReference='" + bookingReference + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Booking booking = (Booking) o;
+        return Objects.equals(bookingReference, booking.bookingReference);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookingReference);
     }
 }
